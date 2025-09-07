@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/icons/icon-192.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Leveling Reality</title>
+  </head>
+  <body>
+    <form>
+      <img class="icon" src="/icons/icon-192.png">
+      <h1>PLAYERNAME</h1>
+      <input id="nameInput" type="text" placeholder="ENTER NAME" required>
+    </form>
+  </body>
+  <script>
+    const nameInput = document.getElementById("nameInput");
+    nameInput.addEventListener("blur", () => {
+      if (nameInput.value.trim() !== "") {
+        localStorage.setItem("name",nameInput.value.trim());
+        window.location.href = "/index.html";
+      } else {
+        console.log("Name input is empty.");
+      }
+    })
+  </script>
+</html>
